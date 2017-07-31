@@ -1,0 +1,90 @@
+/*
+ * Style for Contact Form
+ */
+
+@media all
+{
+    // Removes red highlight on required input in Firefox
+    [required] {
+        color:red;
+        box-shadow: none;
+    }
+    
+    .encodeon-form 
+    {
+        margin: auto;
+        width: 75%;
+        
+        h1
+        {
+            text-align: center;
+        }
+        
+        .field.hidden
+        {
+            display: none;
+        }
+        
+        .required
+        {
+            color: #FF0000;
+        }
+
+        .row
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .label-container
+        {
+            display: table-cell;
+            vertical-align: middle;
+            min-width: 80px;
+            white-space: nowrap;
+        }
+        
+        .input-container
+        {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+        }
+        
+        .double .label-container
+        {
+            display: block;
+            text-align: center;
+        }
+        
+        .double .input-container
+        {
+            display: block;
+        }
+        
+        .row.submit
+        {
+            text-align: center;
+            
+            button
+            {
+                font-size: 1.5em;
+                padding: 10px 20px;
+            }
+        }
+        
+        input[ type = 'text' ],
+        input[ type = 'tel' ],
+        input[ type = 'email' ],
+        textarea
+        {
+            padding: 7px 14px;
+            width: 100%;
+        }
+        
+        .form-response
+        {
+            text-align: center;
+        }
+    }
+}
