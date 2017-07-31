@@ -1,53 +1,3 @@
-<?php
-namespace EncodeonContact;
-class Plugin
-{
-    public function __construct()
-    {
-        add_action( 'activate_encodeon-contact-form/autoloader.php', array( $this, 'on_plugin_activate' ) );
-        add_action( 'wp_enqueue_scripts',   array( $this, 'enqueue_scripts' ) );
-        
-        new Forms\Settings;
-        new Forms\Contact;
-        new Views\Contact;
-    }
-    
-    public function on_plugin_activate()
-    {
-        // Write dynamic js
-        $this->write_ajax_request_js();
-    }
-    
-    public function enqueue_scripts()
-    {
-        wp_enqueue_style(
-            'contact-form',
-            plugin_dir_url( __DIR__ ) . 'css/stylesheets/contact-form.css',
-            array(), 
-            '1.00', 
-            'all'
-        );
-    }
-    
-    /*
-     * Write form-ajax-request.js to file
-     */
-    public function write_ajax_request_js() {
-        /* Turn on output buffering and write output to string */
-        ob_start();
-            echo $this->ajax_request_js_output();
-            $dynamic_js_string = ob_get_contents();
-        ob_end_clean();
-
-        $dynamic_js_filename = plugin_dir_path( __DIR__ ) . 'js/form-ajax-request.js';
-        file_put_contents( $dynamic_js_filename, $dynamic_js_string );
-    }
-    
-    /*
-     * Generate form-ajax-request.js
-     */
-    private function ajax_request_js_output() 
-    { ?>
 
         ( function( $ ) {
             $( document ).ready( function() {         
@@ -64,7 +14,7 @@ class Plugin
                         var formData = $( form ).serialize();
 
                         $.ajax( {
-                            url: "<?php echo admin_url( "admin-ajax.php" ); ?>",
+                            url: "http://localhost:8080/wordpress/plugin-dev-encodeon-contact-form/wp-admin/admin-ajax.php",
                             type: "post",
                             data: formData,
                             success: function ( data, status ) 
@@ -94,5 +44,4 @@ class Plugin
             });
         }( jQuery ) );
 
-    <?php }
-}
+    

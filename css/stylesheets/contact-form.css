@@ -74,3 +74,19 @@
     text-align: center;
   }
 }
+@media all and (max-width: 600px) {
+  /* line 94, ../sass/contact-form.scss */
+  .encodeon-form {
+    width: 90%;
+  }
+  /* line 98, ../sass/contact-form.scss */
+  .encodeon-form .input-container, .encodeon-form .label-container {
+    display: block;
+  }
+  /* line 103, ../sass/contact-form.scss */
+  .encodeon-form .label-container {
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+}

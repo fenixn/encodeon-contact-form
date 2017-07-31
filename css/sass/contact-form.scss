@@ -88,3 +88,23 @@
         }
     }
 }
+
+@media all and ( max-width: 600px )
+{
+    .encodeon-form
+    {
+        width: 90%;
+        
+        .input-container, .label-container
+        {
+            display: block;
+        }
+        
+        .label-container
+        {
+            margin-bottom: 5px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

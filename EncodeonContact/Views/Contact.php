@@ -5,6 +5,14 @@ class Contact
     public function __construct() 
     {
         add_shortcode( "main_contact_form", array( $this, "contact_form_view" ) );
+        
+        wp_enqueue_script(
+            'form-ajax-request',
+            plugin_dir_url( __DIR__ ) . '../js/form-ajax-request.js',
+            array( 'jquery' ), 
+            '1.00', 
+            true
+        );
     }
     
     public function contact_form_view()
@@ -30,8 +38,7 @@ class Contact
                 <div class="row">
                     <div class="label-container">
                         <label for="Name">
-                            <span class="required">*</span>
-                            Name
+                            Name<span class="required">*</span>
                         </label>
                     </div><div class="input-container">
                         <input type="text" id="Name" name="Name" required
@@ -42,8 +49,7 @@ class Contact
                 <div class="row">
                     <div class="label-container">
                         <label for="Phone">
-                            <span class="required">*</span>
-                            Phone
+                            Phone<span class="required">*</span>
                         </label>
                     </div><div class="input-container">
                         <input type="tel" id="Phone" name="Phone" required
@@ -54,8 +60,7 @@ class Contact
                 <div class="row">  
                     <div class="label-container">
                         <label for="Email">
-                            <span class="required">*</span>
-                            Email
+                            Email<span class="required">*</span>
                         </label>
                     </div><div class="input-container">
                         <input type="email" id="Email" name="Email" required
@@ -82,49 +87,6 @@ class Contact
                 <div class="form-response"></div>
             </form>
         </div>
-        
-        <script type="text/javascript">
-        jQuery( document ).ready( function( $ ) {         
-            var form = $( "#encodeon-ajax-contact" );
-            var wait_message = "Please wait while we validate and send your message..."
-            
-            $(function() {
-                $(form).on( "submit", function( e )
-                {
-                    e.preventDefault();
-                    
-                    $( ".form-response" ).html( wait_message );
-                    
-                    var formData = $( form ).serialize();
-
-                    $.ajax( {
-                        url: "<?php echo admin_url( "admin-ajax.php" ); ?>",
-                        type: "post",
-                        data: formData,
-                        success: function ( data, status ) 
-                        {
-                            if(data) 
-                            {
-                                $( ".form-response" ).html( data );
-                                var data_return_status = $( "#data-return-status" ).data( "status" );
-                                if ( data_return_status == false ) 
-                                {
-                                    $( "#contact-form-submit" ).prop( "disabled", false );
-                                }
-                            }
-                        },
-                        error: function ( xhr, desc, err ) 
-                        {
-                            console.log( xhr );
-                            console.log( "Details: " + desc + "\nError:" + err );
-                        }
-                    } ); 
-                    
-                    $( "#contact-form-submit" ).prop( "disabled", true );
-                });
-            });
-        });
-        </script>
         
         <?php
     }
