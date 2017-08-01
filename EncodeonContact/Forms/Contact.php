@@ -49,7 +49,8 @@ class Contact
                 $validation_pass = false;
             }
 
-            if ( $form_name == 'Contact Form' ) 
+            $end_of_validation = false;
+            while ( $validation_pass && !$end_of_validation ) 
             {
                 // Check if Required Fields are filled
                 $required_fields = [
@@ -82,10 +83,8 @@ class Contact
                     $validation_pass = false;
                     echo 'Emails require a @ symbol <br />';
                 }
-
-            } else {
-                // Fail validation for using unknown form name.
-                $validation_pass = false;
+                
+                $end_of_validation = true;
             }
             
             $filtered_form_data = array_filter(
