@@ -7,9 +7,11 @@ class Plugin
         add_action( 'activate_encodeon-contact-form/autoloader.php', array( $this, 'on_plugin_activate' ) );
         add_action( 'wp_enqueue_scripts',   array( $this, 'enqueue_scripts' ) );
         
-        new Forms\Settings;
+        new Admin\ContactForm;
+        new Admin\Mailer;
         new Forms\Contact;
         new Views\Contact;
+        new Mailer\Mailer;
     }
     
     public function on_plugin_activate()

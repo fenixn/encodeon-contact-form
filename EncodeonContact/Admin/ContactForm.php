@@ -1,6 +1,6 @@
 <?php
-namespace EncodeonContact\Forms;
-class Settings
+namespace EncodeonContact\Admin;
+class ContactForm
 {
     public $settings;
     
@@ -33,7 +33,7 @@ class Settings
     
     public function register_settings()
     {
-        foreach ($this->settings as $setting)
+        foreach ( $this->settings as $setting )
         {
             register_setting(
                 'encodeon_contact_form_settings_group',

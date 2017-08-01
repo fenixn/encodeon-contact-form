@@ -1,2 +1,2 @@
 # encodeon-contact-form
-A simple contact form plugin for WordPress
+A simple responsive contact form plugin for WordPress. Plugin also includes option to set SMTP settings for PHP Mailer.
