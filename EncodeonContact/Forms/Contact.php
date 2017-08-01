@@ -35,15 +35,6 @@ class Contact
                 'Message'
             ];
 
-            $filtered_form_data = array_filter(
-                $_POST,
-                function ( $key ) use ( $allowed_form_data ) 
-                {
-                    return in_array( $key, $allowed_form_data );
-                },
-                ARRAY_FILTER_USE_KEY
-            );
-
             // Form Validation
             $validation_pass = true;
             
@@ -96,6 +87,16 @@ class Contact
                 // Fail validation for using unknown form name.
                 $validation_pass = false;
             }
+            
+            $filtered_form_data = array_filter(
+                $_POST,
+                function ( $key ) use ( $allowed_form_data ) 
+                {
+                    return in_array( $key, $allowed_form_data );
+                },
+                ARRAY_FILTER_USE_KEY
+            );
+            unset( $filtered_form_data[ 'Verification' ] );
 
             if ( $validation_pass ) 
             {
@@ -108,7 +109,8 @@ class Contact
                 
                 $subject = 'Contact Form';
                 $message = '';
-                foreach($filtered_form_data as $form_data_name => $form_data_value) {
+                foreach( $filtered_form_data as $form_data_name => $form_data_value ) 
+                {
                     $message = $message . $form_data_name . ": " . stripcslashes($form_data_value) . '<br />';
                 }
                 
@@ -132,6 +134,7 @@ class Contact
                 } else 
                 {
                     echo 'The form has been sucessfully submitted';
+                    echo "<div class='hidden' id='data-return-status' data-status='true'></div>";
                 }
             } else 
             {

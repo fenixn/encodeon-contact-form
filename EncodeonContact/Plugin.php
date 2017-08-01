@@ -10,7 +10,7 @@ class Plugin
         new Admin\ContactForm;
         new Admin\Mailer;
         new Forms\Contact;
-        new Views\Contact;
+        new Forms\Views\Contact;
         new Mailer\Mailer;
     }
     
