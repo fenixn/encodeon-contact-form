@@ -1,10 +1,8 @@
-/* //////// /////// ////// ///// //// /// // /
-    Author: Phuong Nguyen
-    Email: artphuong@live.com
-////// ///// //// /// // // // /// //// ///// */
+#SASS and Gulp
 
 SASS is used to write the CSS for this project. It is a language that extends CSS, and allows for variables and other functions. Gulp is used to process .scss files to .css files. 
 
+## Installing and running Gulp
 To run Gulp, you need to install Node and npm on your machine. 
 Then navigate to the plugin directory in Terminal or Cmd. 
 
