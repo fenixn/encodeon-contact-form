@@ -1,4 +1,4 @@
-#SASS and Gulp
+# SASS and Gulp
 
 SASS is used to write the CSS for this project. It is a language that extends CSS, and allows for variables and other functions. Gulp is used to process .scss files to .css files. 
 
