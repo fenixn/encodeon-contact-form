@@ -1,0 +1,28 @@
+{
+  "name": "encodeon-contact-form",
+  "version": "1.0.0",
+  "description": "A simple contact form for WordPress. It also includes settings for PHP Mailer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenixn/encodeon-contact-form.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fenixn/encodeon-contact-form/issues"
+  },
+  "homepage": "https://github.com/fenixn/encodeon-contact-form#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5"
+  }
+}

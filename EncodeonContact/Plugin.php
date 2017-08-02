@@ -61,7 +61,7 @@ class Plugin
         ( function( $ ) {
             $( document ).ready( function() {         
                 var form = $( "#encodeon-ajax-contact" );
-                var wait_message = "Please wait while we validate and send your message..."
+                var wait_message = "Please wait while we validate and send your message...";
 
                 $( function() {
                     $( form ).on( "submit", function( e )

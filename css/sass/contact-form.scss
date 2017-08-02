@@ -6,7 +6,7 @@
 {
     // Removes red highlight on required input in Firefox
     [required] {
-        color:red;
+        color: #FF0000;
         box-shadow: none;
     }
     
@@ -27,7 +27,7 @@
         
         .required
         {
-            color: #FF0000;
+            color: #FF00FF;
         }
 
         .row
