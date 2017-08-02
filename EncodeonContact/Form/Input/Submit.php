@@ -1,8 +1,8 @@
 <?php
-namespace EncodeonContact\Forms\Inputs;
+namespace EncodeonContact\Form\Input;
 class Submit
 {
-    public function __construct( $label = "Send message" )
+    public function __construct( $label )
     {
         ?>
         <div class="row submit">

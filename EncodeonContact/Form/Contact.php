@@ -1,5 +1,5 @@
 <?php
-namespace EncodeonContact\Forms;
+namespace EncodeonContact\Form;
 class Contact
 {
     public function __construct()
@@ -21,9 +21,6 @@ class Contact
             die();
         } else 
         {
-            
-            $form_name = $_POST[ 'form-name' ];
-
             /* 
              * Keep only elements in $_POST set by the form.
              */

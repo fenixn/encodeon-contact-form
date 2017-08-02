@@ -1,8 +1,8 @@
 <?php
-namespace EncodeonContact\Forms\Inputs;
+namespace EncodeonContact\Form\Input;
 class Textarea
 {
-    public function __construct( $input_name, $input_placeholder, $is_required = true )
+    public function __construct( $input_name, $input_placeholder, $is_required )
     {
         ?>
         <div class="row double">

@@ -1,8 +1,8 @@
 <?php
-namespace EncodeonContact\Forms\Inputs;
+namespace EncodeonContact\Form\Input;
 class Text
 {
-    public function __construct( $input_name, $input_placeholder, $input_type = "text", $is_required = true )
+    public function __construct( $input_name, $input_placeholder, $input_type, $is_required )
     {
         ?>
         <div class="row">

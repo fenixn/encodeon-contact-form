@@ -5,12 +5,11 @@ class Plugin
     public function __construct()
     {
         add_action( 'activate_encodeon-contact-form/autoloader.php', array( $this, 'on_plugin_activate' ) );
-        add_action( 'wp_enqueue_scripts',   array( $this, 'enqueue_scripts' ) );
         
         new Admin\ContactForm;
         new Admin\Mailer;
-        new Forms\Contact;
-        new Forms\Views\Contact;
+        new Form\Contact;
+        new Form\View\Contact;
         new Mailer\Mailer;
     }
     
@@ -28,6 +27,14 @@ class Plugin
             array(), 
             '1.00', 
             'all'
+        );
+        
+        wp_enqueue_script(
+            'form-ajax-request',
+            plugin_dir_url( __DIR__ ) . 'js/form-ajax-request.js',
+            array( 'jquery' ), 
+            '1.001', 
+            true
         );
     }
     

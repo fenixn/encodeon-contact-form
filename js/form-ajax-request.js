@@ -14,7 +14,7 @@
                         var formData = $( form ).serialize();
 
                         $.ajax( {
-                            url: "http://localhost:8080/wordpress/plugin-dev-encodeon-contact-form/wp-admin/admin-ajax.php",
+                            url: "http://76.175.162.140:8080/wordpress/plugin-dev-encodeon-contact-form/wp-admin/admin-ajax.php",
                             type: "post",
                             data: formData,
                             success: function ( data, status ) 

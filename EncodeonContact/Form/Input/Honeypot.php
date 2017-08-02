@@ -1,5 +1,5 @@
 <?php
-namespace EncodeonContact\Forms\Inputs;
+namespace EncodeonContact\Form\Input;
 class Honeypot
 {
     public function __construct()
